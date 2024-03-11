@@ -63,7 +63,7 @@ function DesignerComponent({ elementInstance }: { elementInstance: FormElementIn
   const { label, required, helperText } = element.extraAttributes;
   const id = `checkbox-${element.id}`;
   return (
-    <div className="flex items-top space-x-2">
+    <div className="flex space-x-2 items-top">
       <Checkbox id={id} />
       <div className="grid gap-1.5 leading-none">
         <Label htmlFor={id}>
@@ -99,7 +99,7 @@ function FormComponent({
   const { label, required, placeHolder, helperText } = element.extraAttributes;
   const id = `checkbox-${element.id}`;
   return (
-    <div className="flex items-top space-x-2">
+    <div className="flex space-x-2 items-top">
       <Checkbox
         id={id}
         checked={value}
@@ -215,7 +215,7 @@ function PropertiesComponent({ elementInstance }: { elementInstance: FormElement
           control={form.control}
           name="required"
           render={({ field }) => (
-            <FormItem className="flex items-center justify-between rounded-lg border p-3 shadow-sm">
+            <FormItem className="flex items-center justify-between p-3 border rounded-lg shadow-sm">
               <div className="space-y-0.5">
                 <FormLabel>Required</FormLabel>
                 <FormDescription>

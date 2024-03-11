@@ -39,17 +39,17 @@ async function FormDetailPage({
   return (
     <>
       <div className="py-10 border-b border-muted">
-        <div className="flex justify-between container">
+        <div className="container flex justify-between">
           <h1 className="text-4xl font-bold truncate">{form.name}</h1>
           <VisitBtn shareUrl={form.shareURL} />
         </div>
       </div>
       <div className="py-4 border-b border-muted">
-        <div className="container flex gap-2 items-center justify-between">
+        <div className="container flex items-center justify-between gap-2">
           <FormLinkShare shareUrl={form.shareURL} />
         </div>
       </div>
-      <div className="w-full pt-8 gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 container">
+      <div className="container grid w-full grid-cols-1 gap-4 pt-8 md:grid-cols-2 lg:grid-cols-4">
         <StatsCard
           title="Total visits"
           icon={<LuView className="text-blue-600" />}
@@ -146,8 +146,8 @@ async function SubmissionsTable({ id }: { id: number }) {
 
   return (
     <>
-      <h1 className="text-2xl font-bold my-4">Submissions</h1>
-      <div className="rounded-md border">
+      <h1 className="my-4 text-2xl font-bold">Submissions</h1>
+      <div className="border rounded-md">
         <Table>
           <TableHeader>
             <TableRow>
@@ -156,7 +156,7 @@ async function SubmissionsTable({ id }: { id: number }) {
                   {column.label}
                 </TableHead>
               ))}
-              <TableHead className="text-muted-foreground text-right uppercase">Submitted at</TableHead>
+              <TableHead className="text-right uppercase text-muted-foreground">Submitted at</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -165,7 +165,7 @@ async function SubmissionsTable({ id }: { id: number }) {
                 {columns.map((column) => (
                   <RowCell key={column.id} type={column.type} value={row[column.id]} />
                 ))}
-                <TableCell className="text-muted-foreground text-right">
+                <TableCell className="text-right text-muted-foreground">
                   {formatDistance(row.submittedAt, new Date(), {
                     addSuffix: true,
                   })}
