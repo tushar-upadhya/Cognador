@@ -23,9 +23,9 @@ export default function Home() {
         <CardStatsWrapper />
       </Suspense>
       <Separator className="my-6" />
-      <h2 className="text-4xl font-bold col-span-2">Your forms</h2>
+      <h2 className="col-span-2 text-4xl font-bold">Your forms</h2>
       <Separator className="my-6" />
-      <div className="grid gric-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         <CreateFormBtn />
         <Suspense
           fallback={[1, 2, 3, 4].map((el) => (
@@ -53,7 +53,7 @@ function StatsCards(props: StatsCardProps) {
   const { data, loading } = props;
 
   return (
-    <div className="w-full pt-8 gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+    <div className="grid w-full grid-cols-1 gap-4 pt-8 md:grid-cols-2 lg:grid-cols-4">
       <StatsCard
         title="Total visits"
         icon={<LuView className="text-blue-600" />}
@@ -123,7 +123,7 @@ export function StatsCard({
           )}
           {!loading && value}
         </div>
-        <p className="text-xs text-muted-foreground pt-1">{helperText}</p>
+        <p className="pt-1 text-xs text-muted-foreground">{helperText}</p>
       </CardContent>
     </Card>
   );
@@ -148,12 +148,12 @@ function FormCard({ form }: { form: Form }) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="flex items-center gap-2 justify-between">
-          <span className="truncate font-bold">{form.name}</span>
+        <CardTitle className="flex items-center justify-between gap-2">
+          <span className="font-bold truncate">{form.name}</span>
           {form.published && <Badge>Published</Badge>}
           {!form.published && <Badge variant={"destructive"}>Draft</Badge>}
         </CardTitle>
-        <CardDescription className="flex items-center justify-between text-muted-foreground text-sm">
+        <CardDescription className="flex items-center justify-between text-sm text-muted-foreground">
           {formatDistance(form.createdAt, new Date(), {
             addSuffix: true,
           })}
@@ -172,14 +172,14 @@ function FormCard({ form }: { form: Form }) {
       </CardContent>
       <CardFooter>
         {form.published && (
-          <Button asChild className="w-full mt-2 text-md gap-4">
+          <Button asChild className="w-full gap-4 mt-2 text-md">
             <Link href={`/forms/${form.id}`}>
               View submissions <BiRightArrowAlt />
             </Link>
           </Button>
         )}
         {!form.published && (
-          <Button asChild variant={"secondary"} className="w-full mt-2 text-md gap-4">
+          <Button asChild variant={"secondary"} className="w-full gap-4 mt-2 text-md">
             <Link href={`/builder/${form.id}`}>
               Edit form <FaEdit />
             </Link>

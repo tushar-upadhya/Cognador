@@ -1,4 +1,4 @@
-![pageform_thumbnail](https://github.com/Kliton/yt_pageform/assets/10452377/610b5935-5afd-4126-9dfd-a7064e18a0db)
+<!-- ![pageform_thumbnail](https://github.com/Kliton/yt_pageform/assets/10452377/610b5935-5afd-4126-9dfd-a7064e18a0db)
 
 [Discord server for problems/help](https://discord.gg/Gc3ShuJrYE)
 
@@ -17,7 +17,7 @@ We are going to build this with:
 - Vercel PostgreSQL
 - Prisma as ORM
 
-Features: 
+Features:
 - Responsive
 - Create forms with a stunning drag and drop designer
 - Layout fields: Title, SubTitle, Spacer, Separator, Paragraph
@@ -26,4 +26,4 @@ Features:
 - Form preview dialog
 - Share form url
 - Form submission/validation
-- Form stats: visits and submissions
+- Form stats: visits and submissions -->
